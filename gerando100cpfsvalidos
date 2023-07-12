@@ -1,0 +1,51 @@
+import random
+import sys
+
+for _ in range(100):
+
+    cpf_gerado = ''
+
+    for i in range(9):
+        cpf_gerado += str(random.randint(0, 9))
+
+    cpf = cpf_gerado
+
+    digitos = cpf[:9]
+
+    multiplicador1 = 10
+
+    resultado = 0
+    for digito in digitos:
+        resultado += int(digito) * multiplicador1 
+        multiplicador1 -= 1
+
+    resultado0 = resultado * 10
+    primeiro_digito = resultado0 % 11
+
+    if primeiro_digito <= 9:
+        primeiro_digito
+
+    else:
+        0
+
+    cpf1 = (f'{digitos}{primeiro_digito}')
+
+    dez_digitos = cpf1[:10]
+
+    multiplicador2 = 11
+
+    resultado1 = 0
+    for numeros in dez_digitos:
+        resultado1 += int(numeros) * multiplicador2
+        multiplicador2 -= 1
+
+    por_dez = resultado1 * 10
+    segundo_digito = por_dez % 11
+
+    if segundo_digito <= 9:
+        segundo_digito
+
+    else:
+        0
+
+    print(f'CPF GERADO: {digitos}{primeiro_digito}{segundo_digito}')
